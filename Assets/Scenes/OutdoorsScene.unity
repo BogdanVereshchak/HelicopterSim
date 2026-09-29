@@ -979,14 +979,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 130803135855785231, guid: 12c84a3ee7a98bf46907c8c912b25678, type: 3}
-      propertyPath: cyclicTorque
-      value: 15000
-      objectReference: {fileID: 0}
-    - target: {fileID: 130803135855785231, guid: 12c84a3ee7a98bf46907c8c912b25678, type: 3}
-      propertyPath: maxLiftForce
-      value: 30000
-      objectReference: {fileID: 0}
     - target: {fileID: 2127893698629994597, guid: 12c84a3ee7a98bf46907c8c912b25678, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1030,18 +1022,6 @@ PrefabInstance:
     - target: {fileID: 2446776800802414998, guid: 12c84a3ee7a98bf46907c8c912b25678, type: 3}
       propertyPath: m_Name
       value: Helicopter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811200270987653947, guid: 12c84a3ee7a98bf46907c8c912b25678, type: 3}
-      propertyPath: m_ImplicitCom
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811200270987653947, guid: 12c84a3ee7a98bf46907c8c912b25678, type: 3}
-      propertyPath: m_LinearDamping
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 8811200270987653947, guid: 12c84a3ee7a98bf46907c8c912b25678, type: 3}
-      propertyPath: m_AngularDamping
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

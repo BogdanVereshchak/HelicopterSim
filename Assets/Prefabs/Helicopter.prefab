@@ -52,7 +52,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 2000
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_CenterOfMass: {x: 0, y: 6, z: -2.25}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -62,7 +62,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -222,11 +222,17 @@ MonoBehaviour:
   maxEngineRPM: 450
   spoolUpRate: 90
   spoolDownRate: 60
-  engineOn: 0
-  maxLiftForce: 25000
-  cyclicTorque: 10000
-  tailRotorPower: 40000
-  reactiveTorque: 8000
+  engineOn: 1
+  maxThrust: 26000
+  collectiveRate: 0.5
+  maxTiltAngle: 25
+  attitudeStiffness: 8
+  attitudeDamping: 8
+  maxYawRate: 0.2
+  yawResponse: 6
+  rotorReaction: 0.2
+  dragCdA: {x: 5, y: 12, z: 3}
+  airDensity: 1.2
   maxAngularVelocity: 3
 --- !u!114 &8894181362758911344
 MonoBehaviour:
@@ -240,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04947df1f1725ad419400c292919cdf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HelicopterBladesController
-  maxMainRPS: 5
+  mainRPSFactor: 1
   tailRotorRatio: 4
 --- !u!1 &6220594529925881100
 GameObject:

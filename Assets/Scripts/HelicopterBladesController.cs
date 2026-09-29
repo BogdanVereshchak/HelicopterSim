@@ -9,9 +9,7 @@ public class HelicopterBladesController : MonoBehaviour
     HelicopterController helicopter;
 
     [Header("Rotor Speed Settings")]
-    // Real speed of main propeller ~400 RPM. 400/60 = ~6.6 RPS. Animation have 1RPS
-    [SerializeField] float maxMainRPS = 6.6f;
-    // Tail Rotor spins at Approximately 4x speed of main
+    [SerializeField] float mainRPSFactor = 1f;
     [SerializeField] float tailRotorRatio = 4.0f;
 
     void Awake()
@@ -24,11 +22,8 @@ public class HelicopterBladesController : MonoBehaviour
     {
         if (helicopter == null || anim == null) return;
 
-        float normalizedRPM = helicopter.GetNormalizedRPM();
-        float mainBladeMultiplier = maxMainRPS * normalizedRPM;
-        float tailBladeMultiplier = maxMainRPS * tailRotorRatio * normalizedRPM;
-
-        anim.SetFloat(PropellerSpinMultiplierHash, mainBladeMultiplier);
-        anim.SetFloat(TailRotorSpinMultiplierHash, tailBladeMultiplier);
+        float mainRPS = helicopter.GetEngineRPM() / 60f;
+        anim.SetFloat(PropellerSpinMultiplierHash, mainRPS * mainRPSFactor);
+        anim.SetFloat(TailRotorSpinMultiplierHash, mainRPS * tailRotorRatio);
     }
 }
